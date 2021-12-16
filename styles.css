@@ -1,27 +1,28 @@
 :root
- {
-  font-size: 62.5%;
-  --bg: #fffae3;
-  --contentDark: #473f33;
-  --icon: #f37748;
+{
+    font-size: 62.5%;
+    --bg: #fffae3;
+    --contentDark:#473f33;
+    --icon: #f37748;
+    --hf_bg: rgb(4, 2, 114);
 }
 
 *
- {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  text-decoration: none;
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
 }
 
 body
 {
-  background-color: var(--bg);
-  color: var(--contentDark);
-  display: grid;
-  grid-template-columns: 10% 1fr 1fr 10%;
-  grid-template-rows: 13vh 5vh 1fr 1fr 1fr 12vh;
-  grid-template-areas:
+    background-color: var(--bg);
+    color: var(--contentDark);
+    display: grid;
+    grid-template-columns: 10% 1fr 1fr 10%;
+    grid-template-rows: 13vh 5vh 1fr 1fr 1fr 12vh;
+    grid-template-areas:
     "header header header header"
     ". nav nav ."
     ". main ."
@@ -32,119 +33,299 @@ body
 
 header
 {
-  grid-area: header;
-  grid-column: 1/5;
-  grid-row: 1/2;
-  background-color: #ded;
+    grid-area: header;
+    grid-column: 1/5;
+    grid-row: 1/2;
+    background-color: var(--hf_bg);
 }
 
-.header_container 
-{
-  display: flex;
-  height: 100%;
-}
-
+    .header_container
+    {
+        display: flex;
+        height: 100%;
+    }
 
         .header_container:first-child
         {
            padding-top: 1rem;
         }
 
-          img[alt="JoyToy Logo"]
-          {
-              width: 170px;
-          }
+        img[alt="JoyToy Logo"]
+        {
+            width: 170px;
+        }
 
-.header_center 
-{
-  display: flex;
-  width: 80%;
-  justify-content: center;
-  align-items: flex-end;
-  padding: 0.3rem;
-}
+        .header_center
+        {
+            display: flex;
+            width: 80%;
+            justify-content: center;
+            align-items: flex-end;
+            padding: 0.3rem;
+        }
 
-input[id="searchbar"] 
-{
-  width: 30rem;
-  height: 3rem;
-  margin: 1rem;
-  border-radius: 30px;
-}
+            input[id="searchbar"]
+            {
+                width: 30rem;
+                height: 3rem;
+                font-size: 2rem;
+                margin: 1rem;
+                padding: 1rem;
+                border: var(--icon) solid;
+                border-radius: 30px;
+                background-color: transparent; 
+                transition: background-color 5s;
+            }
 
-i
-{
-  color: var(--icon);
-  margin: 1rem;
-  font-size: 3rem;
-}
+                input:focus
+                { 
+                    background-color: yellow;
+                    color: red; 
+                }
 
-.header_reght 
-{
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-}
+            i
+            {
+                color: var(--icon);
+                margin: 1rem;
+                font-size: 3rem;
+            }
 
-button[id="login"],
-button[id="register"] 
-{
-  background-color: transparent;
-  color: var(--contentDark);
-  border: solid 2.5px;
-  border-radius: 30px;
-  padding: 0.5rem;
-  margin: 1rem;
-  font-size: 1.7rem;
-  font-weight: bolder;
-}
+        .header_right
+        {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+
+            button[id=login], button[id="register"]
+            {
+                background-color: transparent;
+                color: var(--icon);
+                border: solid 2.5px var(--icon);
+                border-radius: 30px;
+                padding: 0.5rem;
+                margin: 1rem;
+                font-size: 1.7rem;
+                font-weight: bolder;
+            }
 nav
 {
-  grid-area: nav;
-  background-color: green;
-  grid-column: 2/4;
-  grid-row: 2/3;
-  display: flex;
-  align-items: center;
+    grid-area: nav;
+    background-color: rgb(55, 43, 223) ;
+    grid-column: 2/4;
+    grid-row: 2/3;
+    display: flex;
+    align-items: center;
 }
 
-nav ul
+    nav ul
+    {
+        width: 100%;
+        display: flex;
+        
+        justify-content: center;
+    }
+
+        nav ul li
+        {
+            width: 12%;
+            margin-right: 2.5rem;
+            list-style: none;
+        }
+
+            nav ul li a
+            {
+                color: #eee;
+                font-size: 2rem;
+                font-weight: bold;
+                text-decoration: none;
+            }
+
+            #spacer
+            {
+                width: 5%;
+            }
+
+            li a:hover
+            {
+                text-decoration: underline rgb(250, 37, 37);
+            }
+
+                #wl::before
+                {
+                    font-family: "Font Awesome 5 Free";
+                    content: "\f004";
+                    color: #eee;
+                    font-size: 2.5rem;
+                    font-weight: 900;
+                    margin-right: 1rem;
+                }
+
+                #wk::before
+                {
+                    font-family: "Font Awesome 5 Free";
+                    content: "\f290";
+                    color: #eee;
+                    font-size: 2.5rem;
+                    font-weight: 900;
+                    margin-right: 1rem;
+                }
+
+main
 {
-  width: 100%;
-  display: flex;
-
-  justify-content: center;
+    grid-area: main;
+    grid-column: 2/4;
+    grid-row: 3/7;
 }
 
-nav ul li 
+
+footer
 {
-  width: 13%;
-  list-style: none;
+    grid-area: footer;
+    grid-column: 1/6;
+    padding: 2rem;
+    border-top: solid #eee;
+    background-color: var(--hf_bg);
+    color: var(--icon);
+    font-size: 2rem;
 }
 
-nav ul li a
+    #footer_an
+    {
+        grid-row: 1/5;
+        grid-row: 7/8;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+        footer ul li
+        {
+            list-style: none;
+        }
+
+            footer ul li a
+            {
+                color: #eee;
+                font-size: 2rem;
+                font-weight: bold;
+                text-decoration: none;
+            }
+
+/* Shop Sections */
+
+.s_main_content
 {
-  color: var(--contentDark);
-  font-size: 2rem;
-  font-weight: bold;
-  text-decoration: none;
+    display: grid;
+    grid-column: 2/4;
+    grid-row: 3/6;
+    background-color: rgb(253, 241, 218);
 }
 
-main 
+.s_main_section
 {
-  grid-area: main;
-  grid-column: 2/4;
-  grid-row: 3/7;
-  background-color: gray;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+    "artikel1 artikel2"
+    "artikel3 artikel4"
+    "artikel5 artikel6";
+    padding: 2rem;
+    gap: 15px;
+    row-gap: 30px;
 }
 
-footer 
+#artikel1,#artikel2,#artikel3,#artikel4,#artikel5,#artikel6
 {
-  grid-area: footer;
-  grid-column: 1/5;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    padding: 2.5rem;
+    border: solid 3px red;
 }
 
-/* Ab Hier arbeiten*/
+    #artikel1 { grid-area: artikel1; }
+    #artikel2 { grid-area: artikel2; }
+    #artikel3 { grid-area: artikel3; }
+    #artikel4 { grid-area: artikel4; }
+    #artikel5 { grid-area: artikel5; }
+    #artikel6 { grid-area: artikel6; }
+
+    .artikel_left
+    {
+        width: 49%;
+    }
+
+    .artikel_right
+    {
+        display: flex;
+        flex-wrap:wrap;
+        width: 49%;
+        padding: 2.5rem;
+    }
+
+    .artikel_right_bot1
+    {
+        width: 30%;
+        padding: 0.5rem;
+    }
+
+        input[id="buy"]
+        {
+            width: 5rem;
+            height: 2.5rem;
+            font-size: 2rem;
+            padding: 0.3rem;
+            margin: auto;
+        }
+
+    .artikel_right_bot2
+    {
+        display: flex;
+        flex-wrap: wrap;
+        width: 60%;
+        
+        text-align: center;
+    }
+
+        h3#preis
+        {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        #wk_in, #wl_in
+        {
+            background-color: transparent;
+            color: var(--contentDark);
+            border: solid 2.5px var(--contentDark);
+            border-radius: 30px;
+            padding: 0.5rem;
+            font-size: 1.7rem;
+            font-weight: bolder;
+            height: 3.5rem;
+        }
+
+    section div img/*[name="ninjago"]*/
+    {
+        width: 100%;
+        order: 1;
+    }
+
+    img[alt="Topseller"]
+    {
+        width: 80px;
+        height: 80px;
+        position: relative;
+        top: -70%;
+        right: - 5%;
+    }
+
+/* Sali register*/
 
 .reg-main 
 {
@@ -240,7 +421,7 @@ footer
   font-family: "Permanent Marker", cursive;
 }
 .reg-i i:hover
-{
+ {
   color: rgb(35%, 69%, 44%);
   background-color: rgb(74%, 71%, 24%);
 }
@@ -265,4 +446,76 @@ label[for="ort"]
   margin-left: 11.5rem;
 }
 
-  
+/* Mojdeh */
+.start_seite{
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 23% 28% 28% 23%;
+    grid-gap: 15px;
+    padding: 15px;
+    margin: 5px 0;
+
+}
+.sec1
+{
+    
+    grid-area:1/1/2/4 ;
+
+}
+.sec2{
+    grid-area:4/1/5/4 ;
+
+}
+.div1{
+    grid-area:1/1/2/2;
+    
+}
+h3, p, .sty{
+    text-align: center;
+    margin: 0.3rem;
+}
+.sty{
+    background-color: rgb(250, 217, 217);
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 0.7rem;
+    color: black;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+ 
+}
+.div2{
+    grid-area:2/1/3/2;
+    font-weight: bold;
+
+}
+.div3{
+    grid-area:3/1/4/2;
+    margin-top: 2rem;
+  text-align: center;
+}
+.div4{
+    grid-area:2/2/3/3;
+    font-weight: bold;
+
+}
+.div5{
+    grid-area:3/2/4/3;
+    margin-top: 2rem;
+  text-align: center;
+}
+.div6{
+    grid-area:2/3/3/4;
+    font-weight: bold;
+
+}
+.div7{
+    grid-area:3/3/4/4;
+    margin-top: 2rem;
+  text-align: center;
+}
+.sec3{
+    grid-area:3/1/4/4;  
+}
