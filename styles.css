@@ -109,12 +109,12 @@ header
                 font-weight: bolder;
             }
 
-            button[id="register"]:active
+            button[id="register"] a:visited
             {
                 color: var(--icon);
             }
 
-            button:active
+            button:visited
             {
                 color: var(--contentDark);
             }
