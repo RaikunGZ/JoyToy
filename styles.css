@@ -108,6 +108,16 @@ header
                 font-size: 1.7rem;
                 font-weight: bolder;
             }
+
+            button[id="register"] a:visited
+            {
+                color: var(--icon);
+            }
+
+            button:visited
+            {
+                color: var(--contentDark);
+            }
 nav
 {
     grid-area: nav;
@@ -447,6 +457,7 @@ label[for="ort"]
 }
 
 /* Mojdeh */
+
 .start_seite{
     background-color: white;
     display: grid;
